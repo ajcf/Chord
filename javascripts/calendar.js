@@ -48,8 +48,26 @@ $(".event, .swapevent").live("click", function(){
 });
 $("#exitbutton").live("click", function(){
   $("#modal").trigger('reveal:close');
+  cancelswap();
 });
 $("#deletebutton").live("click", function(){
   $("#"+$("#modal").data('eventid')).css('display', 'none');
+  cancelswap();
+  $("#modal").trigger('reveal:close');
+
+});
+$("#swapbutton").live("click", function(){
+  $("#detail-swap").css("display", "block");
+});
+$("#confirmswap").live("click", function(){
+  var event = $("#" + $("#modal").data('eventid')).addClass('eventinswap');
+  cancelswap();
   $("#modal").trigger('reveal:close');
 });
+$("#cancelswap").live("click", function(){
+  cancelswap();
+});
+var cancelswap = function(){
+  $("#detail-swap").css("display", "none");
+  $("#swapnote").attr('value','');
+}
