@@ -1,3 +1,13 @@
+//these methods switch between calendar and search views
+$("#gotocalendar").live("click", function(){
+  console.log("hello");
+  $("#searchview").css("display", "none");
+  $("#calendarview").css("display", "");
+});
+$("#gotosearch").live("click", function(){
+  $("#calendarview").css("display", "none");
+  $("#searchview").css("display", "");
+});
 //these methods handle the next and previous buttons.
 $("#prevbutton").live("click", function(){
   var obj = $(this);
@@ -86,10 +96,10 @@ $("#filterdate").live("click", function(){
   refilter();
   $("#datemodal").trigger("reveal:close");
 });
-$("cleardatefilter").live("click", function(){
-  //reshows hidden reservations
+$("#cleardatefilter").live("click", function(){
   $("#searchtable").data("startdate", "10/31");
   $("#searchtable").data("enddate", "12/31");
+  refilter();
   $("#datemodal").trigger("reveal:close");
 });
 
@@ -97,30 +107,64 @@ $(".timelink").live("click", function(){
   $("#timemodal").reveal();
 });
 $("#cleartimefilter").live("click", function(){
-  //reshow hidden reservations
-  $("#starttime").val('');
-  $("#endtime").val('');
+  $("#searchtable").data("starttime", "1");
+  $("#searchtable").data("endtime", "24");
+  $("#starttime").val('1');
+  $("#endtime").val('24');
+  refilter();
   $("#timemodal").trigger("reveal:close");
 });
 $("#filtertime").live("click", function(){
-  $("#datemodal").trigger("reveal:close");
+  $("#searchtable").data("starttime", $("#starttime").val());
+  $("#searchtable").data("endtime", $("#endtime").val());
+  refilter();
+  $("#timemodal").trigger("reveal:close");
 });
-
 
 $(".durationlink").live("click", function(){
   $("#durationmodal").reveal();
 });
 $("#filterduration").live("click", function(){
+  $("#searchtable").data("duration", $("duration").val());
+  refilter();
+  $("#durationmodal").trigger('reveal:close');
+});
+$("#cleardurationfilter").live("click", function(){
+  $("#searchtable").data("duration", "");
+  refilter();
   $("#durationmodal").trigger('reveal:close');
 });
 
 $(".roomtypelink").live("click", function(){
   $("#roomtypemodal").reveal();
 });
+$("#filterroomtype").live("click", function(){
+  console.log($("#roomtype").val());
+  $("#searchtable").data("roomtype", $("#roomtype").val());
+  refilter();
+  $("#roomtypemodal").trigger("reveal:close");
+});
+$("#clearroomtypefilter").live("click", function(){
+  $("#searchtable").data("roomtype", "");
+  refilter();
+  $("#roomtypemodal").trigger("reveal:close");
+});
 $(".availabilitylink").live("click", function(){
   $("#availabilitymodal").reveal();
 });
-$(".takelink").live("click", function(){
+$("#filteravailability").live("click", function(){
+  $("#searchtable").data("availability", $("#availability").val());
+  refilter();
+  $("availabilitymodal").trigger("reveal:close");
+});
+$("#clearavailabilityfilter").live("click", function(){
+  $("#searchtable").data("availability", "");
+  refilter();
+  $("#availabilitymodal").trigger("reveal:close");
+});
+$(".takelink").live("click", function(caller){
+  var row = caller.currentTarget.parentNode.parentNode.id;
+  $("#takemodal").data("rowid", row);
   $("#takemodal").reveal();
 });
 
@@ -148,11 +192,11 @@ function refilter(){
       if(cells[j].className === "roomtypetd") roomtype = cells[j].textContent.trim();
       if(cells[j].className === "availabilitytd") availability = cells[j].textContent.trim();
     }
-    console.log(date+" "+time+" "+duration+" "+roomtype+" "+availability);
+    //console.log(date+" "+time+" "+duration+" "+roomtype+" "+availability);
     if(date < $("#searchtable").data("startdate") || date > $("#searchtable").data("enddate")) show=false;
     if(time < $("#searchtable").data("starttime") || time > $("#searchtable").data("endtime")) show =false;
     if($("#searchtable").data("duration").length > 0 && duration !== $("#searchtable").data("duration")) show = false;
-    if($("#searchtable").data("roomtype").length > 0 && duration !== $("#searchtable").data("roomtype")) show = false;
+    if($("#searchtable").data("roomtype").length > 0 && roomtype !== $("#searchtable").data("roomtype")) show = false;
     if($("#searchtable").data("availability").length > 0 && duration !== $("#searchtable").data("availability")) show = false;
     if(show){
       cur.style.display="";
@@ -160,10 +204,15 @@ function refilter(){
       cur.style.display="none";
     }
   }
-  console.log($("#searchtable").data("startdate")+" "+$("#searchtable").data("enddate"));
-  console.log($("#searchtable").data("starttime")+" "+$("#searchtable").data("endtime"));
-  console.log($("#searchtable").data("duration"));
-  console.log($("#searchtable").data("roomtype"));
-  console.log($("#searchtable").data("availability"));
   console.log("filtered.");
 }
+
+$("#swapaccept").live("click", function(){
+  $("#"+$("#takemodal").data("rowid")).detach();
+  var id = $("#swapreservations").val();
+  $("#"+id).remove();
+  $("#takemodal").trigger("reveal:close");
+});
+$("#swapcancel").live("click", function(){
+  $("#takemodal").trigger("reveal:close");
+});

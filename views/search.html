@@ -33,8 +33,9 @@
     <div class="divider">
     </div>
     <div style="width:100%">
-      <table id="searchtable" style="margin:0 auto;" data-startdate="12/10", data-enddate="12/31", data-starttime="1", data-endtime="25", data-duration="", data-roomtype="", data-availability="">
-        <tr>
+      <table id="searchtable" style="margin:0 auto;"
+        data-startdate="10/31", data-enddate="12/31", data-starttime="0", data-endtime="25", data-duration="", data-roomtype="", data-availability="">
+        <tr style="font-size:2em">
           <th>
             <a href="#" class="datelink">Date</a>
           </th>
@@ -375,8 +376,24 @@
       <input type="submit" id="filterduration" value="Filter"/>
     </div>
     <div id="roomtypemodal" class="reveal-modal">
+      <h1>Select a preferred room type to filter Reservations:</h1>
+      <select id="roomtype">
+        <option value="Standard">Standard</option>
+        <option value="Piano">Piano</option>
+        <option value="Vocal">Vocal</option>
+        <option value="Percussion">Percussion</option>
+      </select>
+      <input type="submit" id="clearroomtypefilter" value="Clear Filter"/>
+      <input type="submit" id="filterroomtype" value="Filter"/>
     </div>
     <div id="availabilitymodal" class="reveal-modal">
+      <h1>Select a preferred availability type to filter Reservations:</h1>
+      <select id="availability">
+        <option value="Swap">Swap</option>
+        <option value="Open">Open</option>
+      </select>
+      <input type="submit" id="clearavailabilityfilter" value="Clear Filter"/>
+      <input type="submit" id="filteravailability" value="Filter"/>
     </div>
     <div id="takemodal" class="reveal-modal">
   </body>
