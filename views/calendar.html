@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calendar - UMass Chord</title>
+    <link rel="stylesheet" href="../stylesheets/style.css" type="text/css">
+    <link rel="stylesheet" href="../stylesheets/reveal.css" type="text/css">
+    <script src="../javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="../javascripts/jquery.reveal.js" type="text/javascript"></script>
+    <script src="../javascripts/calendar.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <img id="smalllogo" src="../images/chord.png"/>
+    <div id="holder">
+      <div id="navigation">
+        <a href="calendar.html">
+          <input class="bigbutton" type = "submit" value="Your Calendar" />
+        </a>
+        <a href="search.html">
+          <input class="bigbutton" type = "submit" value="Search Rooms" />
+        </a>
+      </div>
+    </div>
+    <div id="nametag">
+      Logged In As
+      <span id="name">
+        Fred Smith
+      </span>
+      <br/>
+      <a href="index.html">
+        <input class="medbutton" type="Submit" value="Log Out" />
+    </a>  </div>
+    <div class="divider">
+    </div>
+    <div style="width:100%">
+      <div class="quarterdiv">
+        <input id="prevbutton" data-month="december" class="bigbutton" type="submit" value="Previous Month"/>
+      </div>
+      <div class="halfdiv" style="font-size:38px;">
+        Currently Viewing:
+        <span id="monthname">
+          December
+        </span>
+      </div>
+      <div class="quarterdiv">
+        <input id="nextbutton" data-month="december" class="bigbutton" type="submit" value="Next Month"/>
+      </div>
+    </div>
+    <br/><br/>
+    <div style="width:100%">
+      <div class="calendar" id="november">
+        <table class="table-calendar">
+          <tr>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+              1
+              <div class="event" id="Nov-1-16-5">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="Nov-1-21-2">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              2
+              <div class="event" id="Nov-2-9-10">
+                9 AM: Room 10
+              </div>
+              <div class="event" id="Nov-2-10-10">
+                10 AM: Room 10
+              </div>
+            </td>
+            <td class="date">
+              3
+              <div class="event" id="Nov-3-15-4">
+                3 PM: Room 4
+              </div>
+              <div class="event" id="Nov-3-16-4">
+                4 PM: Room 4
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              4
+              <div class="event" id="Nov-4-16-7">
+                4 PM: Room 7
+              </div>
+              <div class="event" id="Nov-4-17-7">
+                5 PM: Room 7
+              </div>
+              <div class="swapevent" id="Nov-4-7-14">
+                7 PM: Room 14
+              </div>
+            </td>
+            <td class="date">
+              5
+              <div class="event" id="event11">
+                9 AM: Room 8
+              </div>
+            </td>
+            <td class="date">
+              6
+              <div class="event" id="event12">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event13">
+                8 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              7
+              <div class="event" id="event14">
+                11 AM: Room 8
+              </div>
+              <div class="event" id="event15">
+                3 PM: Room 4
+              </div>
+              <div class="swapevent" id="event16">
+                8 PM: Room 1
+              </div>
+            </td>
+            <td class="date">
+              8
+              <div class="event" id="event17">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="event18">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              9
+              <div class="event" id="event19">
+                9 AM: Room 10
+              </div>
+              <div class="event" id="event20">
+                10 AM: Room 10
+              </div>
+              <div class="swapevent" id="event21">
+                5 PM: Room 6
+              </div>
+            </td>
+            <td class="date">
+              10
+              <div class="event" id="event22">
+                3 PM: Room 4
+              </div>
+              <div class="event" id="event23">
+                4 PM: Room 4
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              11
+              <div class="event" id="event24">
+                4 PM: Room 7
+              </div>
+            </td>
+            <td class="date">
+              12
+              <div class="event" id="event25">
+                9 AM: Room 8
+              </div>
+              <div class="event" id="event26">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              13
+              <div class="event" id="event27">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event28">
+                8 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              14
+              <div class="event" id="event29">
+                11 AM: Room 8
+              </div>
+              <div class="event" id="event30">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              15
+              <div class="swapevent" id="event31">
+                10 AM: Room 15
+              </div>
+              <div class="event" id="event32">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="event33">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              16
+              <div class="event" id="event34">
+                9 AM: Room 10
+              </div>
+            </td>
+            <td class="date">
+              17
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              18
+              <div class="event" id="event35">
+                4 PM: Room 7
+              </div>
+            </td>
+            <td class="date">
+              19
+              <div class="event" id="event36">
+                9 AM: Room 8
+              </div>
+              <div class="event" id="event37">
+                3 PM: Room 4
+              </div>
+              <div class="swapevent" id="event38">
+                5 PM: Room 3
+              </div>
+            </td>
+            <td class="date">
+              20
+              <div class="event" id="event39">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event40">
+                8 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              21
+              <div class="event" id="event41">
+                11 AM: Room 8
+              </div>
+              <div class="event" id="event42">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              22
+              <br/>
+              <b> University Closed.</b>
+            </td>
+            <td class="date">
+              23
+              <br/>
+              <b> University Closed.</b>
+            </td>
+            <td class="date">
+              24
+              <br/>
+              <b> University Closed.</b>
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              25
+              <div class="event" id="event43">
+                4 PM: Room 7
+              </div>
+              <div class="event" id="event44">
+                5 PM: Room 7
+              </div>
+            </td>
+            <td class="date">
+              26
+              <div class="event" id="event45">
+                9 AM: Room 8
+              </div>
+              <div class="event" id="event46">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              27
+              <div class="event" id="event47">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event48">
+                8 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              28
+              <div class="event" id="event49">
+                11 AM: Room 8
+              </div>
+              <div class="event" id="event50">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              29
+              <div class="event" id="event51">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="event52">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              30
+              <div class="event" id="event53">
+                9 AM: Room 10
+              </div>
+              <div class="event" id="event54">
+                10 AM: Room 10
+              </div>
+            </td>
+            <td class="date">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="calendar" id="december" style="display:block;">
+        <table class="table-calendar">
+          <tr>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+              1
+              <div class="event" id="event55">
+                3 PM: Room 4
+              </div>
+              <div class="event" id="event56">
+                4 PM: Room 4
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              2
+              <div class="event" id="event57">
+                4 PM: Room 7
+              </div>
+              <div class="event" id="event58">
+                5 PM: Room 7
+              </div>
+            </td>
+            <td class="date">
+              3
+              <div class="event" id="event59">
+                9 AM: Room 8
+              </div>
+              <div class="event" id="event60">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              4
+              <div class="event" id="event61">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event62">
+                8 PM: Room 4
+              </div>
+              <div class="swapevent" id="event63">
+                9 PM: Room 6
+              </div>
+            </td>
+            <td class="date">
+              5
+              <div class="event" id="event64">
+                11 AM: Room 8
+              </div>
+              <div class="event" id="event65">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              6
+              <div class="event" id="event66">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="event67">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              7
+              <div class="event" id="event68">
+                9 AM: Room 10
+              </div>
+              <div class="event" id="event69">
+                10 AM: Room 10
+              </div>
+            </td>
+            <td class="date">
+              8
+              <div class="event" id="event70">
+                3 PM: Room 4
+              </div>
+              <div class="event" id="event71">
+                4 PM: Room 4
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              9
+              <div class="event" id="event72">
+                4 PM: Room 7
+              </div>
+              <div class="event" id="event73">
+                5 PM: Room 7
+              </div>
+            </td>
+            <td class="date">
+              10
+              <div class="event" id="event74">
+                9 AM: Room 8
+              </div>
+              <div class="swapevent" id="event75">
+                2 PM: Room 4
+              </div>
+              <div class="event" id="event76">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              11
+              <div class="event" id="event77">
+                12 PM: Room 4
+              </div>
+              <div class="event" id="event78">
+                8 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              12
+              <div class="event" id="event79">
+                11 AM: Room 8
+              </div>
+              <div class="swapevent" id="event80">
+                2 PM: Room 4
+              </div>
+              <div class="event" id="event81">
+                3 PM: Room 4
+              </div>
+            </td>
+            <td class="date">
+              13
+              <div class="event" id="event82">
+                4 PM: Room 5
+              </div>
+              <div class="event" id="event83">
+                9 PM: Room 2
+              </div>
+            </td>
+            <td class="date">
+              14
+              <div class="event" id="event84">
+                9 AM: Room 10
+              </div>
+              <div class="event" id="event85">
+                10 AM: Room 10
+              </div>
+            </td>
+            <td class="date">
+              15
+              <br/>
+              <b>No Reservations over Winter Break.</b>
+            </td>
+          </tr>
+          <tr>
+            <td class="decdate">
+              16
+            </td>
+            <td class="decdate">
+              17
+            </td>
+            <td class="decdate">
+              18
+            </td> 
+            <td class="decdate">
+              19
+            </td> 
+            <td class="decdate">
+              20
+            </td>  
+            <td class="decdate">
+              21
+            </td>    
+            <td class="decdate">
+              22
+            </td>   
+          </tr>
+          <tr>
+            <td class="decdate">
+              23
+            </td>
+            <td class="decdate">
+              24
+              <br/>
+              <b> University Closed.</b>
+            </td>
+            <td class="decdate">
+              25
+              <br/>
+              <b> University Closed.</b>
+            </td> 
+            <td class="decdate">
+              26
+            </td> 
+            <td class="decdate">
+              27
+            </td>    
+            <td class="decdate">
+              28
+            </td>   
+            <td class="decdate">
+              29
+            </td>
+          </tr>
+          <tr>
+            <td class="decdate">
+              30
+            </td>
+            <td class="decdate">
+              31
+              <br/>
+              <b> University Closed.</b>
+            </td>
+            <td class="decdate">
+            </td> 
+            <td class="decdate">
+            </td> 
+            <td class="decdate">
+            </td>  
+            <td class="decdate">
+            </td>    
+            <td class="decdate">
+            </td>   
+          </tr>
+        </table>
+      </div>
+      <div id="january" class="calendar">
+        <table class="table-calendar">
+          <tr>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+              1
+              <br/>
+              <b> University Closed.</b>
+            </td>
+            <td class="date">
+              2
+            </td>
+            <td class="date">
+              3
+            </td>
+            <td class="date">
+              4
+            </td>
+            <td class="date">
+              5
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              6
+            </td>
+            <td class="date">
+              7
+            </td>
+            <td class="date">
+              8
+            </td>
+            <td class="date">
+              9
+            </td>
+            <td class="date">
+              10
+            </td>
+            <td class="date">
+              11
+            </td>
+            <td class="date">
+              12
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              13
+            </td>
+            <td class="date">
+              14
+            </td>
+            <td class="date">
+              15
+            </td>
+            <td class="date">
+              16
+              <b>Sign-Up begins for Spring Semester.</b>
+            </td>
+            <td class="date">
+              17
+            </td>
+            <td class="date">
+              18
+            </td>
+            <td class="date">
+              19
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              20
+              <br/>
+              <b> Last Day of No Reservations.</b>
+            </td>
+            <td class="date">
+              21
+            </td>
+            <td class="date">
+              22
+            </td>
+            <td class="date">
+              23
+            </td>
+            <td class="date">
+              24
+            </td>
+            <td class="date">
+              25
+            </td>
+            <td class="date">
+              26
+            </td>
+          </tr>
+          <tr>
+            <td class="date">
+              27
+            </td>
+            <td class="date">
+              28
+            </td>
+            <td class="date">
+              29
+            </td>
+            <td class="date">
+              30
+            </td>
+            <td class="date">
+              31
+            </td>
+            <td class="date">
+            </td>
+            <td class="date">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="modal" class="reveal-modal" data-eventid=''>
+      <h1 style="color:#a31838"> Event Detail </h1>
+      <p><b>Date: </b><span id='detail-date'></span></p>
+      <p><b>Time: </b><span id='detail-time'></span></p>
+      <p><b>Room: </b><span id='detail-room'></span></p>
+      <input class="medbutton" id="swapbutton" type="submit" value="Swap"/>
+      <input class="medbutton" id="deletebutton" type="submit"style="width:45%" value="Cancel Reservation"/>
+      <input class="medbutton" id="exitbutton" type="submit" value="Exit"/>
+  </body>
+</html>
