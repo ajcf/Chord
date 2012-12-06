@@ -71,3 +71,37 @@ var cancelswap = function(){
   $("#detail-swap").css("display", "none");
   $("#swapnote").attr('value','');
 }
+
+//stuff for modals for search dates
+$(".datelink").live("click", function(){
+  $("#datemodal").reveal();
+});
+$("#filterdate").live("click", function(){
+  //hides reservations outside of date range
+  $("#datemodal").trigger("reveal:close");
+});
+$("cleardatefilter").live("click", function(){
+  //reshows hidden reservations
+  $("#startdate").attr("value", '');
+  $("#enddate").attr("value", '');
+  $("#datemodal").trigger("reveal:close");
+});
+
+$(".timelink").live("click", function(){
+  $("#timemodal").reveal();
+});
+
+
+$(".durationlink").live("click", function(){
+  $("#durationmodal").reveal();
+});
+$(".roomtypelink").live("click", function(){
+  $("#roomtypemodal").reveal();
+});
+$(".availabilitylink").live("click", function(){
+  $("#availabilitymodal").reveal();
+});
+$(".takelink").live("click", function(){
+  $("#takemodal").reveal();
+});
+

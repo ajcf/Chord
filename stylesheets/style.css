@@ -109,6 +109,10 @@ td.date{
   width: 14%;
   height: 16%;
 }
+th<.calendar{
+  height:20px;
+
+}
 .swapevent{
   background-color: #a31838;
   color: #FFFFFF;
@@ -125,4 +129,12 @@ td.date{
 .eventinswap{
   background-color: #cfcfcf;
   color: #a31838;
+}
+
+#searchtable{
+  border: 1px dashed #CCC;
+}
+th, td{
+  padding: 3px 4px 3px 4px;
+  border: 1px dashed #CCC;
 }
