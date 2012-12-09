@@ -103,7 +103,7 @@ $("#cleardatefilter").live("click", function(){
   $("#datemodal").trigger("reveal:close");
 });
 
-$(".timelink").live("click", function(){
+$("#timelink").live("click", function(){
   $("#timemodal").reveal();
 });
 $("#cleartimefilter").live("click", function(){
@@ -121,7 +121,7 @@ $("#filtertime").live("click", function(){
   $("#timemodal").trigger("reveal:close");
 });
 
-$(".durationlink").live("click", function(){
+$("#durationlink").live("click", function(){
   $("#durationmodal").reveal();
 });
 $("#filterduration").live("click", function(){
@@ -135,7 +135,7 @@ $("#cleardurationfilter").live("click", function(){
   $("#durationmodal").trigger('reveal:close');
 });
 
-$(".roomtypelink").live("click", function(){
+$("#roomtypelink").live("click", function(){
   $("#roomtypemodal").reveal();
 });
 $("#filterroomtype").live("click", function(){
@@ -149,7 +149,7 @@ $("#clearroomtypefilter").live("click", function(){
   refilter();
   $("#roomtypemodal").trigger("reveal:close");
 });
-$(".availabilitylink").live("click", function(){
+$("#availabilitylink").live("click", function(){
   $("#availabilitymodal").reveal();
 });
 $("#filteravailability").live("click", function(){

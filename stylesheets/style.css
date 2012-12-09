@@ -3,9 +3,25 @@ body{
   font-size: 1.25em;
 }
 input[type=submit]{
-  background-image: url('../images/bigbutton.png');
+  /*background-image: url('../images/bigbutton.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-color: #a31838;
+  cursor: pointer;*/
+  border-radius: 5px;  
+  color: white;
+  background-image: -webkit-linear-gradient(top, #A31838, #BC4259);
+}
+input[type=submit]:hover{
+  color: white;
+  background-image: -webkit-linear-gradient(top, #A31838, #A53539);
+}
+input[type=submit]:active{
+  color: white;
+  background-image: -webkit-linear-gradient(top, #BC4259, #A31838);
+}
+input[type=submit]:focus{
+  color: #a31838;
 }
 #login-title, #login-subtitle {
   margin: 0 auto;
@@ -87,7 +103,7 @@ td.novdate{
 .table-calendar{
   height: 100%;
   width: 100%;
-  border: 1px solid black;
+  border: 1px dashed black;
 }
 .calendar{
   height: 850px;
@@ -98,33 +114,34 @@ td.novdate{
 td.decdate{
   text-align: left;
   vertical-align: top;
-  border: 1px solid black;
+  border: 1px dashed black;
   width: 14%;
   height: 14%;
 }
 td.date{
   text-align: left;
   vertical-align: top;
-  border: 1px solid black;
+  border: 1px dashed black;
   width: 14%;
   height: 16%;
 }
 th<.calendar{
   height:20px;
-
+}
+.event, .swapevent, .eventinswap{
+  border-radius: 5px;
+  font-size: 0.75em;
+  padding: 1%;
+  padding: 1% 5px 1% 5px;
+  cursor: pointer;
 }
 .swapevent{
   background-color: #a31838;
   color: #FFFFFF;
-  border-radius: 3px;
-  font-size: 0.75em;
-  padding: 1px 1px 1px 2px;
 }
 .event{
   font-size: 0.75em;
-  padding: 1px 1px 1px 2px;
   border: 1px solid black;
-  border-radius: 3px;
 }
 .eventinswap{
   background-color: #cfcfcf;
@@ -137,4 +154,10 @@ th<.calendar{
 th, td{
   padding: 3px 4px 3px 4px;
   border: 1px dashed #CCC;
+}
+.searchlink:visited{
+  color: gray;
+}
+.takelink:visited{
+  color: gray;
 }
