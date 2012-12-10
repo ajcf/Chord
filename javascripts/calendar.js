@@ -83,7 +83,7 @@ var cancelswap = function(){
 }
 
 //stuff for modals for search dates
-$(".datelink").live("click", function(){
+$("#datelink").live("click", function(){
   $("#datemodal").reveal();
 });
 $("#filterdate").live("click", function(){
