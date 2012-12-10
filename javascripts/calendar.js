@@ -163,11 +163,34 @@ $("#clearavailabilityfilter").live("click", function(){
   $("#availabilitymodal").trigger("reveal:close");
 });
 $(".takelink").live("click", function(caller){
+<<<<<<< HEAD
+
   var row = caller.currentTarget.parentNode.parentNode.id;
+
+  $("#detail-date2").text($("#dateb"+"-"+row).text());
+  $("#detail-time2").text($("#timeb"+"-"+row).text());
+  $("#detail-duration2").text($("#durationb"+"-"+row).text());
+  $("#detail-type2").text($("#typeb"+"-"+row).text());
+
+
+  
+=======
+  var row = caller.currentTarget.parentNode.parentNode.id;
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
   $("#takemodal").data("rowid", row);
   $("#takemodal").reveal();
 });
 
+<<<<<<< HEAD
+$(".swaplink").live("click", function(caller){
+
+  var row = caller.currentTarget.parentNode.parentNode.id;
+  $("#swapmodal").data("rowid", row);
+  $("#swapmodal").reveal();
+});
+
+=======
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
 function refilter(){
   var rows = $("#searchtable tr");
   var cur;
@@ -208,6 +231,30 @@ function refilter(){
 }
 
 $("#swapaccept").live("click", function(){
+<<<<<<< HEAD
+  $("#"+$("#swapmodal").data("rowid")).detach();
+  var id = $("#swapreservations").val();
+  $("#"+id).remove();
+  //need to add then new one to the calendar
+  $("#swapmodal").trigger("reveal:close");
+});
+$("#swapcancel").live("click", function(){
+  $("#swapmodal").trigger("reveal:close");
+});
+
+
+$("#takeaccept").live("click", function(){
+  $("#"+$("#takemodal").data("rowid")).detach();
+  var id = $("#swapreservations").val();
+  $("#"+id).remove();
+  //need to add the new one to the calendar
+  $("#takemodal").trigger("reveal:close");
+});
+$("#takecancel").live("click", function(){
+  $("#takemodal").trigger("reveal:close");
+});
+
+=======
   $("#"+$("#takemodal").data("rowid")).detach();
   var id = $("#swapreservations").val();
   $("#"+id).remove();
@@ -216,3 +263,4 @@ $("#swapaccept").live("click", function(){
 $("#swapcancel").live("click", function(){
   $("#takemodal").trigger("reveal:close");
 });
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
