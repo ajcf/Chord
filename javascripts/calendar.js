@@ -163,6 +163,7 @@ $("#clearavailabilityfilter").live("click", function(){
   $("#availabilitymodal").trigger("reveal:close");
 });
 $(".takelink").live("click", function(caller){
+<<<<<<< HEAD
 
   var row = caller.currentTarget.parentNode.parentNode.id;
 
@@ -173,10 +174,14 @@ $(".takelink").live("click", function(caller){
 
 
   
+=======
+  var row = caller.currentTarget.parentNode.parentNode.id;
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
   $("#takemodal").data("rowid", row);
   $("#takemodal").reveal();
 });
 
+<<<<<<< HEAD
 $(".swaplink").live("click", function(caller){
 
   var row = caller.currentTarget.parentNode.parentNode.id;
@@ -184,6 +189,8 @@ $(".swaplink").live("click", function(caller){
   $("#swapmodal").reveal();
 });
 
+=======
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
 function refilter(){
   var rows = $("#searchtable tr");
   var cur;
@@ -224,6 +231,7 @@ function refilter(){
 }
 
 $("#swapaccept").live("click", function(){
+<<<<<<< HEAD
   $("#"+$("#swapmodal").data("rowid")).detach();
   var id = $("#swapreservations").val();
   $("#"+id).remove();
@@ -246,3 +254,13 @@ $("#takecancel").live("click", function(){
   $("#takemodal").trigger("reveal:close");
 });
 
+=======
+  $("#"+$("#takemodal").data("rowid")).detach();
+  var id = $("#swapreservations").val();
+  $("#"+id).remove();
+  $("#takemodal").trigger("reveal:close");
+});
+$("#swapcancel").live("click", function(){
+  $("#takemodal").trigger("reveal:close");
+});
+>>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
