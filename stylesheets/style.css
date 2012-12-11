@@ -25,7 +25,6 @@ input[type=submit]:focus{
 }
 #login-title, #login-subtitle {
   margin: 0 auto;
-<<<<<<< HEAD
   margin-left: auto ;
   margin-right: auto ;
   width: 100%;
@@ -33,10 +32,6 @@ input[type=submit]:focus{
 
 
 
-=======
-}
-
->>>>>>> 91931cd64a50b26801be07abf6e54ee2863f6937
 #login-form {
   border-style:dashed;
   border-color:#ccc;
