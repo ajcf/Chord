@@ -70,6 +70,9 @@ input[type=submit]:focus{
   width: 100%;
   margin: 10px 0 10px 0;
 }
+.message{
+  color: green;
+}
 .halfdiv{
   text-align:center;
   display:inline-block;

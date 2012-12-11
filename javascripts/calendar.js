@@ -64,7 +64,8 @@ $("#deletebutton").live("click", function(){
   $("#"+$("#modal").data('eventid')).css('display', 'none');
   cancelswap();
   $("#modal").trigger('reveal:close');
-
+  //$("#cancelsuccess").show(15);
+  alert("Reservation has been deleted.");
 });
 $("#swapbutton").live("click", function(){
   $("#detail-swap").css("display", "block");
@@ -73,6 +74,8 @@ $("#confirmswap").live("click", function(){
   var event = $("#" + $("#modal").data('eventid')).addClass('eventinswap');
   cancelswap();
   $("#modal").trigger('reveal:close');
+  //$("#swapsuccess").show(15);
+  alert("Reservation has been placed in swap!");
 });
 $("#cancelswap").live("click", function(){
   cancelswap();
@@ -187,11 +190,11 @@ $("#swapaccept").live("click", function(){
   $("#"+id).remove();
   //need to add then new one to the calendar
   $("#swapmodal").trigger("reveal:close");
+  alert("Practice Room has been successfully reserved.");
 });
 $("#swapcancel").live("click", function(){
   $("#swapmodal").trigger("reveal:close");
 });
-
 
 $("#takeaccept").live("click", function(){
   $("#"+$("#takemodal").data("rowid")).detach();
@@ -199,6 +202,7 @@ $("#takeaccept").live("click", function(){
   $("#"+id).remove();
   //need to add the new one to the calendar
   $("#takemodal").trigger("reveal:close");
+  alert("Practice Room has been successfully reserved.");
 });
 $("#takecancel").live("click", function(){
   $("#takemodal").trigger("reveal:close");
