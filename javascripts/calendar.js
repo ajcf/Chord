@@ -81,87 +81,6 @@ var cancelswap = function(){
   $("#detail-swap").css("display", "none");
   $("#swapnote").attr('value','');
 }
-
-//stuff for modals for search dates
-/*$("#datelink").live("click", function(){
-  $("#datemodal").reveal();
-});
-$("#filterdate").live("click", function(){
-  var date1 = ( ($("#startdate").val() === "") ? ["00", "00", "00"] : $("#startdate").val().split('-') );
-  $("#searchtable").data("startdate", date1[1]+"/"+date1[2]);
-  var date2 = ( ($("#enddate").val() === "") ? ["15", "12", "31"] : $("#enddate").val().split('-') );
-  $("#searchtable").data("enddate", date2[1]+"/"+date2[2]);
-  refilter();
-  $("#datemodal").trigger("reveal:close");
-});
-$("#cleardatefilter").live("click", function(){
-  $("#searchtable").data("startdate", "10/31");
-  $("#searchtable").data("enddate", "12/31");
-  refilter();
-  $("#datemodal").trigger("reveal:close");
-});
-*/
-/*
-$("#timelink").live("click", function(){
-  $("#timemodal").reveal();
-});
-$("#cleartimefilter").live("click", function(){
-  $("#searchtable").data("starttime", "1");
-  $("#searchtable").data("endtime", "24");
-  $("#starttime").val('1');
-  $("#endtime").val('24');
-  refilter();
-  $("#timemodal").trigger("reveal:close");
-});
-$("#filtertime").live("click", function(){
-  $("#searchtable").data("starttime", $("#starttime").val());
-  $("#searchtable").data("endtime", $("#endtime").val());
-  refilter();
-  $("#timemodal").trigger("reveal:close");
-});
-*/
-/*
-$("#durationlink").live("click", function(){
-  $("#durationmodal").reveal();
-});
-$("#filterduration").live("click", function(){
-  $("#searchtable").data("duration", $("duration").val());
-  refilter();
-  $("#durationmodal").trigger('reveal:close');
-});
-$("#cleardurationfilter").live("click", function(){
-  $("#searchtable").data("duration", "");
-  refilter();
-  $("#durationmodal").trigger('reveal:close');
-});
-
-$("#roomtypelink").live("click", function(){
-  $("#roomtypemodal").reveal();
-});
-$("#filterroomtype").live("click", function(){
-  $("#searchtable").data("roomtype", $("#roomtype").val());
-  refilter();
-  $("#roomtypemodal").trigger("reveal:close");
-});
-$("#clearroomtypefilter").live("click", function(){
-  $("#searchtable").data("roomtype", "");
-  refilter();
-  $("#roomtypemodal").trigger("reveal:close");
-});
-$("#availabilitylink").live("click", function(){
-  $("#availabilitymodal").reveal();
-});
-$("#filteravailability").live("click", function(){
-  $("#searchtable").data("availability", $("#availability").val());
-  refilter();
-  $("availabilitymodal").trigger("reveal:close");
-});
-$("#clearavailabilityfilter").live("click", function(){
-  $("#searchtable").data("availability", "");
-  refilter();
-  $("#availabilitymodal").trigger("reveal:close");
-});
-*/
 $("#filterbutton").live("click", function(){
   var date1 = ( ($("#startdate").val() === "") ? ["00", "00", "00"] : $("#startdate").val().split('-') );
   $("#searchtable").data("startdate", date1[1]+"/"+date1[2]);
@@ -181,8 +100,8 @@ $("#unfilterbutton").live("click", function(){
   $("#enddate").val("");
   $("#searchtable").data("starttime", "1");
   $("#searchtable").data("endtime", "24");
-  $("#starttime").val('1');
-  $("#endtime").val('24');
+  $("#starttime").val('0');
+  $("#endtime").val('25');
   $("#searchtable").data("roomtype", "");
   $("#roomtype").val("");
   $("#searchtable").data("duration", "");
@@ -198,9 +117,6 @@ $(".takelink").live("click", function(caller){
   $("#detail-time2").text($("#timeb"+"-"+row).text());
   $("#detail-duration2").text($("#durationb"+"-"+row).text());
   $("#detail-type2").text($("#typeb"+"-"+row).text());
-
-
-  
   $("#takemodal").data("rowid", row);
   $("#takemodal").reveal();
 });
