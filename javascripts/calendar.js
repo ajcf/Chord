@@ -83,15 +83,13 @@ var cancelswap = function(){
 }
 
 //stuff for modals for search dates
-$("#datelink").live("click", function(){
+/*$("#datelink").live("click", function(){
   $("#datemodal").reveal();
 });
 $("#filterdate").live("click", function(){
   var date1 = ( ($("#startdate").val() === "") ? ["00", "00", "00"] : $("#startdate").val().split('-') );
-  console.log(date1);
   $("#searchtable").data("startdate", date1[1]+"/"+date1[2]);
   var date2 = ( ($("#enddate").val() === "") ? ["15", "12", "31"] : $("#enddate").val().split('-') );
-  console.log(date2);
   $("#searchtable").data("enddate", date2[1]+"/"+date2[2]);
   refilter();
   $("#datemodal").trigger("reveal:close");
@@ -102,7 +100,8 @@ $("#cleardatefilter").live("click", function(){
   refilter();
   $("#datemodal").trigger("reveal:close");
 });
-
+*/
+/*
 $("#timelink").live("click", function(){
   $("#timemodal").reveal();
 });
@@ -120,7 +119,8 @@ $("#filtertime").live("click", function(){
   refilter();
   $("#timemodal").trigger("reveal:close");
 });
-
+*/
+/*
 $("#durationlink").live("click", function(){
   $("#durationmodal").reveal();
 });
@@ -139,7 +139,6 @@ $("#roomtypelink").live("click", function(){
   $("#roomtypemodal").reveal();
 });
 $("#filterroomtype").live("click", function(){
-  console.log($("#roomtype").val());
   $("#searchtable").data("roomtype", $("#roomtype").val());
   refilter();
   $("#roomtypemodal").trigger("reveal:close");
@@ -162,10 +161,39 @@ $("#clearavailabilityfilter").live("click", function(){
   refilter();
   $("#availabilitymodal").trigger("reveal:close");
 });
+*/
+$("#filterbutton").live("click", function(){
+  var date1 = ( ($("#startdate").val() === "") ? ["00", "00", "00"] : $("#startdate").val().split('-') );
+  $("#searchtable").data("startdate", date1[1]+"/"+date1[2]);
+  var date2 = ( ($("#enddate").val() === "") ? ["15", "12", "31"] : $("#enddate").val().split('-') );
+  $("#searchtable").data("enddate", date2[1]+"/"+date2[2]);
+  $("#searchtable").data("starttime", $("#starttime").val());
+  $("#searchtable").data("endtime", $("#endtime").val());
+  $("#searchtable").data("roomtype", $("#roomtype").val());
+  $("#searchtable").data("duration", $("#duration").val());
+  $("#searchtable").data("availability", $("#availability").val());
+  refilter();
+});
+$("#unfilterbutton").live("click", function(){
+  $("#searchtable").data("startdate", "10/01");
+  $("#searchtable").data("enddate", "12/31");
+  $("#startdate").val("");
+  $("#enddate").val("");
+  $("#searchtable").data("starttime", "1");
+  $("#searchtable").data("endtime", "24");
+  $("#starttime").val('1');
+  $("#endtime").val('24');
+  $("#searchtable").data("roomtype", "");
+  $("#roomtype").val("");
+  $("#searchtable").data("duration", "");
+  $("#duration").val("");
+  $("#searchtable").data("availability", "");
+  $("#availability").val("");
+  refilter();
+});
+
 $(".takelink").live("click", function(caller){
-
   var row = caller.currentTarget.parentNode.parentNode.id;
-
   $("#detail-date2").text($("#dateb"+"-"+row).text());
   $("#detail-time2").text($("#timeb"+"-"+row).text());
   $("#detail-duration2").text($("#durationb"+"-"+row).text());
@@ -209,11 +237,25 @@ function refilter(){
       if(cells[j].className === "availabilitytd") availability = cells[j].textContent.trim();
     }
     //console.log(date+" "+time+" "+duration+" "+roomtype+" "+availability);
-    if(date < $("#searchtable").data("startdate") || date > $("#searchtable").data("enddate")) show=false;
-    if(time < $("#searchtable").data("starttime") || time > $("#searchtable").data("endtime")) show =false;
-    if($("#searchtable").data("duration").length > 0 && duration !== $("#searchtable").data("duration")) show = false;
-    if($("#searchtable").data("roomtype").length > 0 && roomtype !== $("#searchtable").data("roomtype")) show = false;
-    if($("#searchtable").data("availability").length > 0 && duration !== $("#searchtable").data("availability")) show = false;
+    if(date < $("#searchtable").data("startdate") || date > $("#searchtable").data("enddate")){ 
+      console.log(date + " is not within date range.");
+      show=false;
+    }
+    if(time < $("#searchtable").data("starttime") || time > $("#searchtable").data("endtime")){ 
+      console.log(time +" is not within time range");
+      show =false;
+    }
+    if($("#searchtable").data("duration").length > 0 && duration !== $("#searchtable").data("duration")){
+      console.log(duration + " is not equal to duration.");
+     show = false;
+   }
+    if($("#searchtable").data("roomtype").length > 0 && roomtype !== $("#searchtable").data("roomtype")){ 
+      console.log(roomtype + " is not equal to roomtype");
+      show = false;}
+    if($("#searchtable").data("availability").length > 0 && duration !== $("#searchtable").data("availability")){
+      console.log(availability + " is not equal to availability");
+     show = false;
+   }
     if(show){
       cur.style.display="";
     } else {
@@ -245,4 +287,5 @@ $("#takeaccept").live("click", function(){
 $("#takecancel").live("click", function(){
   $("#takemodal").trigger("reveal:close");
 });
+
 

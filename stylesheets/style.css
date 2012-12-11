@@ -30,8 +30,6 @@ input[type=submit]:focus{
   width: 100%;
 }
 
-
-
 #login-form {
   border-style:dashed;
   border-color:#ccc;
@@ -133,26 +131,25 @@ td.date{
 th<.calendar{
   height:20px;
 }
-.event, .swapevent, .eventinswap{
+.event, .swapevent, .eventinswap, .exampleevent{
   border-radius: 5px;
   font-size: 0.75em;
   padding: 1%;
   padding: 1% 5px 1% 5px;
   cursor: pointer;
 }
-.swapevent{
+.swapevent, .swapexample{
   background-color: #a31838;
   color: #FFFFFF;
 }
-.event{
+.event, .eventexample{
   font-size: 0.75em;
   border: 1px solid black;
 }
-.eventinswap{
+.eventinswap, .inswapexample{
   background-color: #cfcfcf;
   color: #a31838;
 }
-
 #searchtable{
   border: 1px dashed #CCC;
 }
